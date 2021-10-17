@@ -1,0 +1,103 @@
+// Variables Values
+$mainColor: #03045e;
+$premieryColor: #0077b6;
+
+$Font-family: "Open Sans", sans-serif;
+$Main-transition: 0.5s;
+// End Variables
+
+body {
+  font-family: $Font-family;
+}
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: black, $alpha: 0.5);
+}
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@keyframes Rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(365deg);
+  }
+}
+@keyframes transLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(150%);
+  }
+}
+@keyframes transRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-150%);
+  }
+}
+@keyframes upAndDown {
+  100% {
+    background-color: rgba($color: $premieryColor, $alpha: 0.2);
+    opacity: .5;
+    transform: translatey(-30px);
+  }
+}
+
+// media for container
+@media (min-width: 768) and (max-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+@mixin arrow($size, $direc, $color, $top, $right) {
+  content: "";
+  border: $size solid;
+  @if $direc == top {
+    border-color: transparent transparent $color;
+  } @else if $direc == left {
+    border-color: transparent $color transparent transparent;
+  } @else if $direc == right {
+    border-color: transparent transparent transparent $color;
+  } @else {
+    border-color: $color transparent transparent;
+  }
+
+  position: absolute;
+  right: $right;
+  top: $top;
+}
+
+@mixin postio($tp: 0px, $rit: 0px) {
+  position: absolute;
+  top: $tp;
+  right: $rit;
+}
+
+@mixin Fl-Ex($Just-content: flex-start, $align-itm: flex-start, $wrap: nowrap) {
+  display: flex;
+  justify-content: $Just-content;
+  align-items: $align-itm;
+  flex-wrap: $wrap;
+}
