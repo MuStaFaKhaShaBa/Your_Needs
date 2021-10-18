@@ -3,7 +3,9 @@ $mainColor: #03045e;
 $premieryColor: #0077b6;
 
 $Font-family: "Open Sans", sans-serif;
+$fColor: #777;
 $Main-transition: 0.5s;
+$Padding: 60px;
 // End Variables
 
 body {
@@ -19,7 +21,67 @@ body {
   padding: 0 15px;
   margin: 0 auto;
 }
-
+.catch {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  .head {
+    &::after {
+      content: "";
+      width: 200px;
+      height: 2px;
+      background-color: rgba($color: $mainColor, $alpha: 0.5);
+      position: absolute;
+      bottom: -35%;
+      left: 30%;
+    }
+    &::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      background-color: white;
+      border: 1px solid rgba($color: $mainColor, $alpha: 0.5);
+      border-radius: 50%;
+      position: absolute;
+      bottom: -43%;
+      left: 30%;
+      z-index: 1;
+      cursor: grab;
+      animation: transhead 4s linear infinite alternate;
+    }
+    .spHead {
+      color: rgba($color: $premieryColor, $alpha: 0.2);
+      font-size: 100px;
+      margin: 0 0 -25px;
+      text-align: center;
+      cursor: grab;
+    }
+    p {
+      font-size: 20px;
+      text-align: center;
+      font-weight: 900;
+      font-style: italic;
+      color: $fColor;
+    }
+    @media (max-width: 767px) {
+      &::after {
+        width: 120px;
+        bottom: -30%;
+        left: 25%;
+      }
+      &::before {
+        left: 25%;
+      }
+      .spHead {
+        font-size: 50px;
+        line-height: 75px;
+      }
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+}
 @keyframes Rotate {
   0% {
     transform: rotate(0deg);
@@ -36,6 +98,24 @@ body {
     transform: translateX(150%);
   }
 }
+@keyframes transhead {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translatex(180px);
+  }
+}
+@media (max-width: 767px) {
+  @keyframes transhead {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translatex(100px);
+    }
+  }
+}
 @keyframes transRight {
   0% {
     transform: translateX(0);
@@ -47,7 +127,7 @@ body {
 @keyframes upAndDown {
   100% {
     background-color: rgba($color: $premieryColor, $alpha: 0.2);
-    opacity: .5;
+    opacity: 0.5;
     transform: translatey(-30px);
   }
 }
