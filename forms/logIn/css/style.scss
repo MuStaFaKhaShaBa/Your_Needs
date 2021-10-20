@@ -35,7 +35,6 @@ input:focus::placeholder{
 .parent {
   overflow: hidden;
   position: relative;
-  width: 100%;
   height: 120vh;
   font-family: "Open Sans", sans-serif;
   background-color: #001923;
@@ -82,7 +81,7 @@ input:focus::placeholder{
     }
   }
   .container {
-    margin-top: 100px;
+    margin-top: 50px;
     width: 100%;
     max-width: 800px;
     background-color: rgba($color: white, $alpha: 0.1);
@@ -93,6 +92,10 @@ input:focus::placeholder{
     backdrop-filter: blur(25px);
     text-align: center;
     padding: 20px;
+    @media (min-width:1099px) {
+     margin-top: -20px;
+      
+    }
     @media (max-width: 767px) {
       max-width: 600px;
 

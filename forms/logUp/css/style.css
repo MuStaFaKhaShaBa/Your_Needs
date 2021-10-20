@@ -215,10 +215,14 @@ input:focus::placeholder {
 .parent .container .switch button:first-child {
   border-bottom-left-radius: 25px;
   border-top-left-radius: 25px;
-  background-color: #fff;
+  background-color: #03045e;
 }
 
-.parent .container .switch button:first-child a {
+.parent .container .switch button:first-child:hover {
+  background-color: white;
+}
+
+.parent .container .switch button:first-child:hover a {
   color: #03045e;
 }
 
@@ -226,16 +230,12 @@ input:focus::placeholder {
   border-bottom-right-radius: 25px;
   border-top-right-radius: 25px;
   margin-left: -6px;
-  background-color: #03045e;
+  background-color: #fff;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-.parent .container .switch button:last-child:hover {
-  background-color: white;
-}
-
-.parent .container .switch button:last-child:hover a {
+.parent .container .switch button:last-child a {
   color: #03045e;
 }
 

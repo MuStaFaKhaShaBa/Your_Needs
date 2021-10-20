@@ -151,10 +151,14 @@ input:focus::placeholder {
       button:first-child {
         border-bottom-left-radius: 25px;
         border-top-left-radius: 25px;
-        background-color: #fff;
-
-        a {
-          color: $mainColor;
+        background-color: $mainColor;
+       
+        &:hover {
+          background-color: white;
+  
+          a {
+            color: $mainColor;
+          }
         }
       }
 
@@ -162,15 +166,10 @@ input:focus::placeholder {
         border-bottom-right-radius: 25px;
         border-top-right-radius: 25px;
         margin-left: -6px;
-        background-color: $mainColor;
+        background-color: #fff;
         transition: $Main-transition;
-
-        &:hover {
-          background-color: white;
-
-          a {
-            color: $mainColor;
-          }
+        a {
+          color: $mainColor;
         }
       }
     }
