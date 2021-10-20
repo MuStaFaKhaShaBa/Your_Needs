@@ -1,3 +1,10 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 ::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.8);
   font-size: 13px;
@@ -16,6 +23,22 @@
 ::placeholder {
   color: rgba(255, 255, 255, 0.8);
   font-size: 13px;
+}
+
+input:focus::-webkit-input-placeholder {
+  color: #0077b6;
+}
+
+input:focus:-ms-input-placeholder {
+  color: #0077b6;
+}
+
+input:focus::-ms-input-placeholder {
+  color: #0077b6;
+}
+
+input:focus::placeholder {
+  color: #0077b6;
 }
 
 @-webkit-keyframes animBgC1 {
@@ -46,7 +69,7 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   font-family: "Open Sans", sans-serif;
   background-color: #001923;
   display: -webkit-box;
@@ -67,8 +90,8 @@
   height: 350px;
   border-radius: 50%;
   background-color: #03045e;
-  -webkit-transform: translate(-450px, -100px);
-          transform: translate(-450px, -100px);
+  -webkit-transform: translate(-400px, -100px);
+          transform: translate(-400px, -100px);
   position: absolute;
   -webkit-animation: animBgC2 4s linear infinite alternate;
           animation: animBgC2 4s linear infinite alternate;
@@ -77,8 +100,8 @@
 .parent::after {
   -webkit-animation: animBgC1 4s linear infinite alternate;
           animation: animBgC1 4s linear infinite alternate;
-  -webkit-transform: translate(350px, 200px);
-          transform: translate(350px, 200px);
+  -webkit-transform: translate(350px, 250px);
+          transform: translate(350px, 250px);
   height: 250px;
   width: 250px;
   background-color: #0077b6;
@@ -95,8 +118,19 @@
   }
 }
 
+@media (max-width: 435px) {
+  .parent::after {
+    -webkit-transform: translate(150px, 250px);
+            transform: translate(150px, 250px);
+  }
+  .parent::before {
+    -webkit-transform: translate(-200px, -150px);
+            transform: translate(-200px, -150px);
+  }
+}
+
 .parent .container {
-  margin-top: 50px;
+  margin-top: 100px;
   width: 100%;
   max-width: 800px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -120,14 +154,12 @@
 @media (max-width: 767px) {
   .parent .container {
     max-width: 600px;
-    margin: 0 40px;
   }
 }
 
 @media (max-width: 435px) {
   .parent .container {
     width: 350px;
-    margin: 0 40px;
   }
 }
 

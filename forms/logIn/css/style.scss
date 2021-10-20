@@ -8,6 +8,11 @@ $Main-transition: 0.3s;
 $Padding: 60px;
 
 // End Variables
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 ::placeholder {
   color: rgba($color: white, $alpha: 0.8);
   font-size: 13px;
@@ -31,7 +36,7 @@ input:focus::placeholder{
   overflow: hidden;
   position: relative;
   width: 100%;
-  height: 100vh;
+  height: 120vh;
   font-family: "Open Sans", sans-serif;
   background-color: #001923;
   display: flex;
@@ -46,14 +51,14 @@ input:focus::placeholder{
     height: 350px;
     border-radius: 50%;
     background-color: $mainColor;
-    transform: translate(-450px, -100px);
+    transform: translate(-400px, -100px);
     position: absolute;
     animation: animBgC2 4s linear infinite alternate;
   }
 
   &::after {
     animation: animBgC1 4s linear infinite alternate;
-    transform: translate(350px, 200px);
+    transform: translate(350px, 250px);
     height: 250px;
     width: 250px;
     background-color: $premieryColor;
@@ -66,8 +71,18 @@ input:focus::placeholder{
       transform: translate(-300px, -100px);
     }
   }
+  
+  @media (max-width: 435px) {
+    &::after {
+      transform: translate(150px, 250px);
+    }
+
+    &::before {
+      transform: translate(-200px, -150px);
+    }
+  }
   .container {
-    margin-top: 50px;
+    margin-top: 100px;
     width: 100%;
     max-width: 800px;
     background-color: rgba($color: white, $alpha: 0.1);
@@ -80,11 +95,10 @@ input:focus::placeholder{
     padding: 20px;
     @media (max-width: 767px) {
       max-width: 600px;
-      margin: 0 40px;
+
     }
     @media (max-width: 435px) {
       width: 350px;
-      margin: 0 40px;
     }
     .shape {
       transform: translateY(-70px);
