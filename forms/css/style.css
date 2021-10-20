@@ -1,0 +1,338 @@
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+}
+
+:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+}
+
+::-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+}
+
+::placeholder {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+}
+
+body {
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  background-color: #001923;
+}
+
+.circle1,
+.circle2 {
+  width: 15vw;
+  height: 15vw;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.circle1 {
+  background-color: #0077b6;
+  -webkit-transform: translate(20vw, 15vh);
+          transform: translate(20vw, 15vh);
+  -webkit-animation: animBgC1 4s linear infinite alternate;
+          animation: animBgC1 4s linear infinite alternate;
+}
+
+.circle2 {
+  background-color: #03045e;
+  -webkit-transform: translate(60vw, 30vh);
+          transform: translate(60vw, 30vh);
+  -webkit-animation: animBgC2 4s linear infinite alternate;
+          animation: animBgC2 4s linear infinite alternate;
+}
+
+@-webkit-keyframes animBgC1 {
+  100% {
+    background-color: #03045e;
+  }
+}
+
+@keyframes animBgC1 {
+  100% {
+    background-color: #03045e;
+  }
+}
+
+@-webkit-keyframes animBgC2 {
+  100% {
+    background-color: #0077b6;
+  }
+}
+
+@keyframes animBgC2 {
+  100% {
+    background-color: #0077b6;
+  }
+}
+
+form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  width: 45vw;
+  position: absolute;
+  top: 20vh;
+  left: 25vw;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  -webkit-box-shadow: 1px 1px rgba(238, 238, 238, 0.2), -1px -1px rgba(255, 255, 255, 0.25);
+          box-shadow: 1px 1px rgba(238, 238, 238, 0.2), -1px -1px rgba(255, 255, 255, 0.25);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+
+form .shape {
+  -webkit-transform: translateY(-60px);
+          transform: translateY(-60px);
+  cursor: -webkit-grab;
+  cursor: grab;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: rgba(255, 255, 255, 0.5);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+form .shape:hover {
+  color: rgba(0, 119, 182, 0.5);
+}
+
+form .shape .your {
+  overflow: hidden;
+  padding-right: 20px;
+}
+
+form .shape .your p {
+  -webkit-animation: transLeft 3s linear infinite alternate;
+          animation: transLeft 3s linear infinite alternate;
+}
+
+form .shape .need {
+  overflow: hidden;
+  padding-left: 20px;
+}
+
+form .shape .need p {
+  -webkit-animation: transRight 3s linear infinite alternate;
+          animation: transRight 3s linear infinite alternate;
+}
+
+form .shape hr {
+  width: 30px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+  margin: 0 -15px;
+  border: 2px solid;
+}
+
+form .switch button {
+  width: 70px;
+  height: 30px;
+  border: 0;
+}
+
+form .switch button a {
+  text-decoration: none;
+  color: white;
+  font-size: 14px;
+}
+
+form .switch button:first-child {
+  border-bottom-left-radius: 25px;
+  border-top-left-radius: 25px;
+}
+
+form .switch button:first-child a {
+  color: #03045e;
+}
+
+form .switch button:last-child {
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  margin-left: -6px;
+  background-color: #03045e;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+form .switch button:last-child:hover {
+  background-color: white;
+}
+
+form .switch button:last-child:hover a {
+  color: #03045e;
+}
+
+form header {
+  margin-top: 10px;
+  color: white;
+}
+
+form header h2 {
+  font-size: 30px;
+  line-height: 1.8;
+}
+
+form header p {
+  text-transform: capitalize;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+form header .hr {
+  margin: 20px 5vw;
+  border-color: rgba(238, 238, 238, 0.5);
+}
+
+form .form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+}
+
+form .form input {
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  outline: 0;
+  border: 0;
+  margin-bottom: 10px;
+  background-color: #001923;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 13px;
+}
+
+form .form input:focus {
+  border: 1px solid #0077b6;
+  color: #0077b6;
+}
+
+form .form input[type="submit"] {
+  background-color: #0077b6;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+form .form input[type="submit"]:hover {
+  background-color: rgba(0, 119, 182, 0.5);
+  color: white;
+}
+
+form .other {
+  margin: 10px;
+}
+
+form .other a {
+  text-decoration: none;
+  color: #0077b6;
+}
+
+form .other a:hover {
+  color: rgba(0, 119, 182, 0.5);
+}
+
+form .other hr {
+  border-color: rgba(238, 238, 238, 0.5);
+  margin: 10px;
+}
+
+form .other p {
+  margin: 15px;
+  color: white;
+}
+
+form .other button {
+  text-align: center;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #001923;
+  border: 1px solid #0077b6;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+form .other button a {
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+form .other button:hover {
+  background-color: #0077b6;
+  -webkit-box-shadow: 0 0 20px #0077b6, 0 0 40px #0077b6, 0 0 80px #0077b6;
+          box-shadow: 0 0 20px #0077b6, 0 0 40px #0077b6, 0 0 80px #0077b6;
+}
+
+form .other button:hover a {
+  color: white;
+}
+
+@-webkit-keyframes transLeft {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(150%);
+            transform: translateX(150%);
+  }
+}
+
+@keyframes transLeft {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(150%);
+            transform: translateX(150%);
+  }
+}
+
+@-webkit-keyframes transRight {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-150%);
+            transform: translateX(-150%);
+  }
+}
+
+@keyframes transRight {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-150%);
+            transform: translateX(-150%);
+  }
+}
+/*# sourceMappingURL=style.css.map */

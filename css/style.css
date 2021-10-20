@@ -655,7 +655,6 @@ header .container nav .btn button:last-child {
 
 .services {
   padding: 60px 0;
-  height: 50vh;
 }
 
 .services .container {
@@ -722,5 +721,23 @@ header .container nav .btn button:last-child {
 .services .container .service section:hover .content {
   -webkit-transform: translateY(-150px);
           transform: translateY(-150px);
+}
+
+.aboutOwner {
+  position: relative;
+  height: 100vh;
+  padding: 60px 0;
+  overflow: hidden;
+  background-color: rgba(0, 119, 182, 0.3);
+}
+
+.aboutOwner .circle {
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  top: -40%;
+  left: -15%;
 }
 /*# sourceMappingURL=style.css.map */
