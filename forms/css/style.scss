@@ -1,262 +1,291 @@
 // Variables Values
-$mainColor    : #03045e;
+$mainColor: #03045e;
 $premieryColor: #0077b6;
 
-$Font-family: "Open Sans",
-sans-serif;
-$fColor         : #777;
+$Font-family: "Open Sans", sans-serif;
+$fColor: #777;
 $Main-transition: 0.3s;
-$Padding        : 60px;
+$Padding: 60px;
 
 // End Variables
 ::placeholder {
-    color    : rgba($color: white, $alpha: 0.8);
-    font-size: 13px;
-}
-
-body {
-    height          : 100vh;
-    font-family     : "Open Sans", sans-serif;
-    background-color: #001923;
-}
-
-.circle1,
-.circle2 {
-    width           : 15vw;
-    height          : 15vw;
-    background-color: black;
-    border-radius   : 50%;
-}
-
-.circle1 {
-    background-color: $premieryColor;
-    transform       : translate(20vw, 15vh);
-    animation       : animBgC1 4s linear infinite alternate;
-}
-
-.circle2 {
-    background-color: $mainColor;
-    transform       : translate(60vw, 30vh);
-    animation       : animBgC2 4s linear infinite alternate;
+  color: rgba($color: white, $alpha: 0.8);
+  font-size: 13px;
 }
 
 @keyframes animBgC1 {
-    100% {
-        background-color: $mainColor;
-    }
+  100% {
+    background-color: $mainColor;
+  }
 }
 
 @keyframes animBgC2 {
-    100% {
-        background-color: $premieryColor;
-    }
+  100% {
+    background-color: $premieryColor;
+  }
 }
 
-form {
-    display         : flex;
-    text-align      : center;
-    flex-flow       : column;
-    width           : 45vw;
-    position        : absolute;
-    top             : 20vh;
-    left            : 25vw;
+.parent {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  background-color: #001923;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &::after,
+  &::before {
+    content: "";
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: $mainColor;
+    transform: translate(-450px, -100px);
+    position: absolute;
+    animation: animBgC2 4s linear infinite alternate;
+  }
+
+  &::after {
+    animation: animBgC1 4s linear infinite alternate;
+    transform: translate(350px, 200px);
+    height: 250px;
+    width: 250px;
+    background-color: $premieryColor;
+  }
+  @media (max-width: 767px) {
+    &::after {
+      transform: translate(250px, 200px);
+    }
+    &::before {
+      transform: translate(-300px, -100px);
+    }
+  }
+  .container {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 800px;
     background-color: rgba($color: white, $alpha: 0.1);
-    border-radius   : 8px;
-    box-shadow      : 1px 1px rgba($color: #eee, $alpha: 0.2),
-        -1px -1px rgba($color: white, $alpha: 0.25);
-    backdrop-filter          : blur(10px);
-
+    z-index: 5;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    backdrop-filter: blur(25px);
+    text-align: center;
+    padding: 20px;
+    @media (max-width: 767px) {
+      max-width: 600px;
+      margin: 0 40px;
+    }
+    @media (max-width: 435px) {
+      width: 350px;
+      margin: 0 40px;
+    }
     .shape {
-        transform      : translateY(-60px);
-        cursor         : grab;
-        display        : flex;
-        align-items    : center;
-        color          : rgba($color: white, $alpha: 0.5);
-        transition     : $Main-transition;
-        justify-content: center;
+      transform: translateY(-70px);
+      cursor: grab;
+      display: flex;
+      align-items: center;
+      color: rgba($color: white, $alpha: 0.5);
+      transition: $Main-transition;
+      justify-content: center;
 
-        &:hover {
-            color: rgba($color: $premieryColor, $alpha: 0.5);
+      &:hover {
+        color: rgba($color: $premieryColor, $alpha: 0.5);
+      }
+
+      .your {
+        overflow: hidden;
+        padding-right: 20px;
+
+        p {
+          animation: transLeft 3s linear infinite alternate;
         }
+      }
 
-        .your {
-            overflow     : hidden;
-            padding-right: 20px;
+      .need {
+        overflow: hidden;
+        padding-left: 20px;
 
-            p {
-                animation: transLeft 3s linear infinite alternate;
-            }
+        p {
+          animation: transRight 3s linear infinite alternate;
         }
+      }
 
-        .need {
-            overflow    : hidden;
-            padding-left: 20px;
-
-            p {
-                animation: transRight 3s linear infinite alternate;
-            }
-        }
-
-        hr {
-            width    : 30px;
-            transform: rotate(90deg);
-            margin   : 0 -15px;
-            border   : 2px solid;
-        }
+      hr {
+        width: 30px;
+        transform: rotate(90deg);
+        margin: 0 -15px;
+        border: 2px solid;
+      }
     }
 
     .switch {
-        button {
-            width : 70px;
-            height: 30px;
-            border: 0;
+      button {
+        width: 70px;
+        height: 30px;
+        border: 0;
 
-            a {
-                text-decoration: none;
-                color          : white;
-                font-size      : 14px;
-            }
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 14px;
+          font-weight: 600;
         }
+      }
 
-        button:first-child {
-            border-bottom-left-radius: 25px;
-            border-top-left-radius   : 25px;
+      button:first-child {
+        border-bottom-left-radius: 25px;
+        border-top-left-radius: 25px;
+        background-color: #fff;
 
-            a {
-                color: $mainColor;
-            }
+        a {
+          color: $mainColor;
         }
+      }
 
-        button:last-child {
-            border-bottom-right-radius: 25px;
-            border-top-right-radius   : 25px;
-            margin-left               : -6px;
-            background-color          : $mainColor;
-            transition                : $Main-transition;
+      button:last-child {
+        border-bottom-right-radius: 25px;
+        border-top-right-radius: 25px;
+        margin-left: -6px;
+        background-color: $mainColor;
+        transition: $Main-transition;
 
-            &:hover {
-                background-color: white;
+        &:hover {
+          background-color: white;
 
-                a {
-                    color: $mainColor;
-                }
-            }
+          a {
+            color: $mainColor;
+          }
         }
+      }
     }
 
     header {
-        margin-top: 10px;
-        color     : white;
+      margin: 20px 40px 30px 40px;
+      color: white;
+      overflow: hidden;
+      h2 {
+        font-size: 30px;
+        line-height: 1.8;
+      }
 
-        h2 {
-            font-size  : 30px;
-            line-height: 1.8;
-        }
+      p {
+        text-transform: capitalize;
+        font-size: 12px;
+        line-height: 1.5;
+      }
 
-        p {
-            text-transform: capitalize;
-            font-size     : 12px;
-            line-height   : 1.5;
+      .hr {
+        width: 500px;
+        margin: 20px 0 0;
+        border-color: rgba($color: #eee, $alpha: 0.5);
+        @media (max-width: 767px) {
+          width: 350px;
+        } 
+        @media (max-width: 435px) {
+          width: 250px;
         }
-
-        .hr {
-            margin      : 20px 5vw;
-            border-color: rgba($color: #eee, $alpha: 0.5);
-        }
+      }
     }
-
     .form {
-        display    : flex;
-        align-items: center;
-        flex-flow  : column;
+      display: flex;
+      align-items: center;
+      flex-flow: column;
+      input {
+        min-width: 300px;
+        padding: 15px;
+        border-radius: 5px;
+        outline: 0;
+        border: 0;
+        margin-bottom: 10px;
+        background-color: #001923;
+        color: rgba($color: white, $alpha: 0.8);
+        font-size: 13px;
+      }
 
-        input {
-            width           : 50%;
-            padding         : 10px;
-            border-radius   : 5px;
-            outline         : 0;
-            border          : 0;
-            margin-bottom   : 10px;
-            background-color: #001923;
-            color           : rgba($color: white, $alpha: 0.8);
-            font-size       : 13px;
+      input:focus {
+        border: 1px solid $premieryColor;
+        color: $premieryColor;
+      }
+
+      input[type="submit"] {
+        background-color: $premieryColor;
+        transition: $Main-transition;
+        min-width: 200px;
+
+        &:hover {
+          background-color: rgba($color: $premieryColor, $alpha: 0.5);
+          color: white;
         }
-
-        input:focus {
-            border: 1px solid $premieryColor;
-            color : $premieryColor;
-        }
-
-        input[type="submit"] {
-            background-color: $premieryColor;
-            transition      : $Main-transition;
-
-            &:hover {
-                background-color: rgba($color: $premieryColor, $alpha: 0.5);
-                color           : white;
-            }
-        }
+      }
     }
-
     .other {
+      margin: 10px;
+      a {
+        text-decoration: none;
+        color: $premieryColor;
+
+        &:hover {
+          color: rgba($color: $premieryColor, $alpha: 0.5);
+        }
+      }
+
+      hr {
+        border-color: rgba($color: #eee, $alpha: 0.5);
         margin: 10px;
+      }
+
+      p {
+        margin: 15px;
+        color: white;
+      }
+
+      button {
+        text-align: center;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: #001923;
+        border: 1px solid #0077b6;
+        transition: $Main-transition;
 
         a {
-            text-decoration: none;
-            color          : $premieryColor;
-
-            &:hover {
-                color: rgba($color: $premieryColor, $alpha: 0.5);
-            }
+          transition: $Main-transition;
         }
 
-        hr {
-            border-color: rgba($color: #eee, $alpha: 0.5);
-            margin      : 10px;
-        }
+        &:hover {
+          background-color: $premieryColor;
+          box-shadow: 0 0 20px $premieryColor, 0 0 40px $premieryColor,
+            0 0 80px $premieryColor;
 
-        p {
-            margin: 15px;
-            color : white;
+          a {
+            color: white;
+          }
         }
-        button{
-            text-align: center;
-            padding: 10px;
-            border-radius: 20px;
-            background-color: #001923;
-            border: 1px solid #0077b6;
-            transition: $Main-transition;
-            a{
-                transition: $Main-transition;
-            }
-            &:hover{
-                background-color: $premieryColor;
-                box-shadow:0 0 20px $premieryColor,
-                0 0 40px $premieryColor , 0 0 80px $premieryColor;
-                a{
-                    color: white;
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 @keyframes transLeft {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    100% {
-        transform: translateX(150%);
-    }
+  100% {
+    transform: translateX(150%);
+  }
 }
 
 @keyframes transRight {
-    0% {
-        transform: translateX(0);
-    }
+  0% {
+    transform: translateX(0);
+  }
 
-    100% {
-        transform: translateX(-150%);
-    }
+  100% {
+    transform: translateX(-150%);
+  }
 }

@@ -18,36 +18,6 @@
   font-size: 13px;
 }
 
-body {
-  height: 100vh;
-  font-family: "Open Sans", sans-serif;
-  background-color: #001923;
-}
-
-.circle1,
-.circle2 {
-  width: 15vw;
-  height: 15vw;
-  background-color: black;
-  border-radius: 50%;
-}
-
-.circle1 {
-  background-color: #0077b6;
-  -webkit-transform: translate(20vw, 15vh);
-          transform: translate(20vw, 15vh);
-  -webkit-animation: animBgC1 4s linear infinite alternate;
-          animation: animBgC1 4s linear infinite alternate;
-}
-
-.circle2 {
-  background-color: #03045e;
-  -webkit-transform: translate(60vw, 30vh);
-          transform: translate(60vw, 30vh);
-  -webkit-animation: animBgC2 4s linear infinite alternate;
-          animation: animBgC2 4s linear infinite alternate;
-}
-
 @-webkit-keyframes animBgC1 {
   100% {
     background-color: #03045e;
@@ -72,30 +42,98 @@ body {
   }
 }
 
-form {
+.parent {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  background-color: #001923;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.parent::after, .parent::before {
+  content: "";
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background-color: #03045e;
+  -webkit-transform: translate(-450px, -100px);
+          transform: translate(-450px, -100px);
+  position: absolute;
+  -webkit-animation: animBgC2 4s linear infinite alternate;
+          animation: animBgC2 4s linear infinite alternate;
+}
+
+.parent::after {
+  -webkit-animation: animBgC1 4s linear infinite alternate;
+          animation: animBgC1 4s linear infinite alternate;
+  -webkit-transform: translate(350px, 200px);
+          transform: translate(350px, 200px);
+  height: 250px;
+  width: 250px;
+  background-color: #0077b6;
+}
+
+@media (max-width: 767px) {
+  .parent::after {
+    -webkit-transform: translate(250px, 200px);
+            transform: translate(250px, 200px);
+  }
+  .parent::before {
+    -webkit-transform: translate(-300px, -100px);
+            transform: translate(-300px, -100px);
+  }
+}
+
+.parent .container {
+  margin-top: 50px;
+  width: 100%;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.1);
+  z-index: 5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
-  width: 45vw;
-  position: absolute;
-  top: 20vh;
-  left: 25vw;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  -webkit-box-shadow: 1px 1px rgba(238, 238, 238, 0.2), -1px -1px rgba(255, 255, 255, 0.25);
-          box-shadow: 1px 1px rgba(238, 238, 238, 0.2), -1px -1px rgba(255, 255, 255, 0.25);
-  -webkit-backdrop-filter: blur(10px);
-          backdrop-filter: blur(10px);
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  text-align: center;
+  padding: 20px;
 }
 
-form .shape {
-  -webkit-transform: translateY(-60px);
-          transform: translateY(-60px);
+@media (max-width: 767px) {
+  .parent .container {
+    max-width: 600px;
+    margin: 0 40px;
+  }
+}
+
+@media (max-width: 435px) {
+  .parent .container {
+    width: 350px;
+    margin: 0 40px;
+  }
+}
+
+.parent .container .shape {
+  -webkit-transform: translateY(-70px);
+          transform: translateY(-70px);
   cursor: -webkit-grab;
   cursor: grab;
   display: -webkit-box;
@@ -112,31 +150,31 @@ form .shape {
           justify-content: center;
 }
 
-form .shape:hover {
+.parent .container .shape:hover {
   color: rgba(0, 119, 182, 0.5);
 }
 
-form .shape .your {
+.parent .container .shape .your {
   overflow: hidden;
   padding-right: 20px;
 }
 
-form .shape .your p {
+.parent .container .shape .your p {
   -webkit-animation: transLeft 3s linear infinite alternate;
           animation: transLeft 3s linear infinite alternate;
 }
 
-form .shape .need {
+.parent .container .shape .need {
   overflow: hidden;
   padding-left: 20px;
 }
 
-form .shape .need p {
+.parent .container .shape .need p {
   -webkit-animation: transRight 3s linear infinite alternate;
           animation: transRight 3s linear infinite alternate;
 }
 
-form .shape hr {
+.parent .container .shape hr {
   width: 30px;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
@@ -144,28 +182,30 @@ form .shape hr {
   border: 2px solid;
 }
 
-form .switch button {
+.parent .container .switch button {
   width: 70px;
   height: 30px;
   border: 0;
 }
 
-form .switch button a {
+.parent .container .switch button a {
   text-decoration: none;
   color: white;
   font-size: 14px;
+  font-weight: 600;
 }
 
-form .switch button:first-child {
+.parent .container .switch button:first-child {
   border-bottom-left-radius: 25px;
   border-top-left-radius: 25px;
+  background-color: #fff;
 }
 
-form .switch button:first-child a {
+.parent .container .switch button:first-child a {
   color: #03045e;
 }
 
-form .switch button:last-child {
+.parent .container .switch button:last-child {
   border-bottom-right-radius: 25px;
   border-top-right-radius: 25px;
   margin-left: -6px;
@@ -174,36 +214,50 @@ form .switch button:last-child {
   transition: 0.3s;
 }
 
-form .switch button:last-child:hover {
+.parent .container .switch button:last-child:hover {
   background-color: white;
 }
 
-form .switch button:last-child:hover a {
+.parent .container .switch button:last-child:hover a {
   color: #03045e;
 }
 
-form header {
-  margin-top: 10px;
+.parent .container header {
+  margin: 20px 40px 30px 40px;
   color: white;
+  overflow: hidden;
 }
 
-form header h2 {
+.parent .container header h2 {
   font-size: 30px;
   line-height: 1.8;
 }
 
-form header p {
+.parent .container header p {
   text-transform: capitalize;
   font-size: 12px;
   line-height: 1.5;
 }
 
-form header .hr {
-  margin: 20px 5vw;
+.parent .container header .hr {
+  width: 500px;
+  margin: 20px 0 0;
   border-color: rgba(238, 238, 238, 0.5);
 }
 
-form .form {
+@media (max-width: 767px) {
+  .parent .container header .hr {
+    width: 350px;
+  }
+}
+
+@media (max-width: 435px) {
+  .parent .container header .hr {
+    width: 250px;
+  }
+}
+
+.parent .container .form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -216,9 +270,9 @@ form .form {
           flex-flow: column;
 }
 
-form .form input {
-  width: 50%;
-  padding: 10px;
+.parent .container .form input {
+  min-width: 300px;
+  padding: 15px;
   border-radius: 5px;
   outline: 0;
   border: 0;
@@ -228,46 +282,47 @@ form .form input {
   font-size: 13px;
 }
 
-form .form input:focus {
+.parent .container .form input:focus {
   border: 1px solid #0077b6;
   color: #0077b6;
 }
 
-form .form input[type="submit"] {
+.parent .container .form input[type="submit"] {
   background-color: #0077b6;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  min-width: 200px;
 }
 
-form .form input[type="submit"]:hover {
+.parent .container .form input[type="submit"]:hover {
   background-color: rgba(0, 119, 182, 0.5);
   color: white;
 }
 
-form .other {
+.parent .container .other {
   margin: 10px;
 }
 
-form .other a {
+.parent .container .other a {
   text-decoration: none;
   color: #0077b6;
 }
 
-form .other a:hover {
+.parent .container .other a:hover {
   color: rgba(0, 119, 182, 0.5);
 }
 
-form .other hr {
+.parent .container .other hr {
   border-color: rgba(238, 238, 238, 0.5);
   margin: 10px;
 }
 
-form .other p {
+.parent .container .other p {
   margin: 15px;
   color: white;
 }
 
-form .other button {
+.parent .container .other button {
   text-align: center;
   padding: 10px;
   border-radius: 20px;
@@ -277,18 +332,18 @@ form .other button {
   transition: 0.3s;
 }
 
-form .other button a {
+.parent .container .other button a {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 
-form .other button:hover {
+.parent .container .other button:hover {
   background-color: #0077b6;
   -webkit-box-shadow: 0 0 20px #0077b6, 0 0 40px #0077b6, 0 0 80px #0077b6;
           box-shadow: 0 0 20px #0077b6, 0 0 40px #0077b6, 0 0 80px #0077b6;
 }
 
-form .other button:hover a {
+.parent .container .other button:hover a {
   color: white;
 }
 
