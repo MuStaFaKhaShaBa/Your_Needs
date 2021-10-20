@@ -12,24 +12,19 @@ $Padding: 60px;
   color: rgba($color: white, $alpha: 0.8);
   font-size: 13px;
 }
-
-@keyframes animBgC1 {
-  100% {
-    background-color: $mainColor;
-  }
+input:focus::placeholder {
+  color: $premieryColor;
 }
-
-@keyframes animBgC2 {
-  100% {
-    background-color: $premieryColor;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 .parent {
   overflow: hidden;
   position: relative;
-  width: 100%;
-  height: 100vh;
+  height: 120vh;
   font-family: "Open Sans", sans-serif;
   background-color: #001923;
   display: flex;
@@ -51,21 +46,34 @@ $Padding: 60px;
 
   &::after {
     animation: animBgC1 4s linear infinite alternate;
-    transform: translate(350px, 200px);
+    transform: translate(330px, 250px);
     height: 250px;
     width: 250px;
     background-color: $premieryColor;
   }
+
   @media (max-width: 767px) {
+    height: 140vh;
     &::after {
-      transform: translate(250px, 200px);
+      transform: translate(200px, 200px);
     }
+
     &::before {
-      transform: translate(-300px, -100px);
+      transform: translate(-200px, -150px);
+    }
+  }
+  @media (max-width: 435px) {
+    height: 180vh;
+    &::after {
+      transform: translate(200px, 250px);
+    }
+
+    &::before {
+      transform: translate(-200px, -250px);
     }
   }
   .container {
-    margin-top: 50px;
+    margin-top: 100px;
     width: 100%;
     max-width: 800px;
     background-color: rgba($color: white, $alpha: 0.1);
@@ -76,14 +84,17 @@ $Padding: 60px;
     backdrop-filter: blur(25px);
     text-align: center;
     padding: 20px;
+
     @media (max-width: 767px) {
       max-width: 600px;
-      margin: 0 40px;
+      transform: translateY(-30px);
     }
+
     @media (max-width: 435px) {
       width: 350px;
-      margin: 0 40px;
+      transform: translateY(-30px);
     }
+
     .shape {
       transform: translateY(-70px);
       cursor: grab;
@@ -168,6 +179,7 @@ $Padding: 60px;
       margin: 20px 40px 30px 40px;
       color: white;
       overflow: hidden;
+
       h2 {
         font-size: 30px;
         line-height: 1.8;
@@ -183,43 +195,59 @@ $Padding: 60px;
         width: 500px;
         margin: 20px 0 0;
         border-color: rgba($color: #eee, $alpha: 0.5);
+
         @media (max-width: 767px) {
           width: 350px;
-        } 
+        }
+
         @media (max-width: 435px) {
           width: 250px;
         }
       }
     }
+
     .form {
-      display: flex;
-      align-items: center;
-      flex-flow: column;
-      input {
-        min-width: 300px;
-        padding: 15px;
-        border-radius: 5px;
-        outline: 0;
-        border: 0;
-        margin-bottom: 10px;
-        background-color: #001923;
-        color: rgba($color: white, $alpha: 0.8);
-        font-size: 13px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+
+      .col {
+        display: flex;
+        flex-flow: column;
+        input {
+          margin-bottom: 20px;
+          min-width: 200px;
+          padding: 15px;
+          border-radius: 5px;
+          outline: 0;
+          border: 0;
+          margin-bottom: 10px;
+          background-color: #001923;
+          color: rgba($color: white, $alpha: 0.8);
+          font-size: 13px;
+        }
+        input:focus {
+          border: 1px solid $premieryColor;
+          color: $premieryColor;
+        }
       }
+      .col:last-child {
+        transform: translatex(50%);
+        input[type="submit"] {
+          background-color: $premieryColor;
+          transition: $Main-transition;
+          min-width: 200px;
 
-      input:focus {
-        border: 1px solid $premieryColor;
-        color: $premieryColor;
+          &:hover {
+            background-color: rgba($color: $premieryColor, $alpha: 0.5);
+            color: white;
+          }
+        }
       }
-
-      input[type="submit"] {
-        background-color: $premieryColor;
-        transition: $Main-transition;
-        min-width: 200px;
-
-        &:hover {
-          background-color: rgba($color: $premieryColor, $alpha: 0.5);
-          color: white;
+      @media (max-width: 436px) {
+        .col:last-child {
+          width: 100px;
+          transform: translateX(65%);
         }
       }
     }
@@ -269,6 +297,17 @@ $Padding: 60px;
     }
   }
 }
+@keyframes animBgC1 {
+  100% {
+    background-color: $mainColor;
+  }
+}
+
+@keyframes animBgC2 {
+  100% {
+    background-color: $premieryColor;
+  }
+}
 
 @keyframes transLeft {
   0% {
@@ -289,3 +328,40 @@ $Padding: 60px;
     transform: translateX(-150%);
   }
 }
+
+// background-color: cornflowerblue;
+// display         : grid;
+// grid-auto-flow  : column;
+
+// @media (max-width: 767px) {
+//     grid-auto-flow: row;
+// }
+
+// .col {
+//     background-color: chocolate;
+//     width           : (100% / 2);
+
+//     input {
+//         min-width       : 300px;
+//         padding         : 15px;
+//         border-radius   : 5px;
+//         outline         : 0;
+//         border          : 0;
+//         margin-bottom   : 10px;
+//         background-color: #001923;
+//         color           : rgba($color: white, $alpha: 0.8);
+//         font-size       : 13px;
+//     }
+
+//     input:focus {
+//         border: 1px solid $premieryColor;
+//         color : $premieryColor;
+//     }
+
+//     // input[type="submit"] {
+//     // }
+// }
+
+// .col:last-child {
+//     grid-area: 2 / 1 / 3 / 3;
+// }

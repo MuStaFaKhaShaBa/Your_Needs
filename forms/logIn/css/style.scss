@@ -1,0 +1,293 @@
+// Variables Values
+$mainColor: #03045e;
+$premieryColor: #0077b6;
+
+$Font-family: "Open Sans", sans-serif;
+$fColor: #777;
+$Main-transition: 0.3s;
+$Padding: 60px;
+
+// End Variables
+::placeholder {
+  color: rgba($color: white, $alpha: 0.8);
+  font-size: 13px;
+}
+input:focus::placeholder{
+  color: $premieryColor;
+}
+@keyframes animBgC1 {
+  100% {
+    background-color: $mainColor;
+  }
+}
+
+@keyframes animBgC2 {
+  100% {
+    background-color: $premieryColor;
+  }
+}
+
+.parent {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-family: "Open Sans", sans-serif;
+  background-color: #001923;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &::after,
+  &::before {
+    content: "";
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    background-color: $mainColor;
+    transform: translate(-450px, -100px);
+    position: absolute;
+    animation: animBgC2 4s linear infinite alternate;
+  }
+
+  &::after {
+    animation: animBgC1 4s linear infinite alternate;
+    transform: translate(350px, 200px);
+    height: 250px;
+    width: 250px;
+    background-color: $premieryColor;
+  }
+  @media (max-width: 767px) {
+    &::after {
+      transform: translate(250px, 200px);
+    }
+    &::before {
+      transform: translate(-300px, -100px);
+    }
+  }
+  .container {
+    margin-top: 50px;
+    width: 100%;
+    max-width: 800px;
+    background-color: rgba($color: white, $alpha: 0.1);
+    z-index: 5;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    backdrop-filter: blur(25px);
+    text-align: center;
+    padding: 20px;
+    @media (max-width: 767px) {
+      max-width: 600px;
+      margin: 0 40px;
+    }
+    @media (max-width: 435px) {
+      width: 350px;
+      margin: 0 40px;
+    }
+    .shape {
+      transform: translateY(-70px);
+      cursor: grab;
+      display: flex;
+      align-items: center;
+      color: rgba($color: white, $alpha: 0.5);
+      transition: $Main-transition;
+      justify-content: center;
+
+      &:hover {
+        color: rgba($color: $premieryColor, $alpha: 0.5);
+      }
+
+      .your {
+        overflow: hidden;
+        padding-right: 20px;
+
+        p {
+          animation: transLeft 3s linear infinite alternate;
+        }
+      }
+
+      .need {
+        overflow: hidden;
+        padding-left: 20px;
+
+        p {
+          animation: transRight 3s linear infinite alternate;
+        }
+      }
+
+      hr {
+        width: 30px;
+        transform: rotate(90deg);
+        margin: 0 -15px;
+        border: 2px solid;
+      }
+    }
+
+    .switch {
+      button {
+        width: 70px;
+        height: 30px;
+        border: 0;
+
+        a {
+          text-decoration: none;
+          color: white;
+          font-size: 14px;
+          font-weight: 600;
+        }
+      }
+
+      button:first-child {
+        border-bottom-left-radius: 25px;
+        border-top-left-radius: 25px;
+        background-color: #fff;
+
+        a {
+          color: $mainColor;
+        }
+      }
+
+      button:last-child {
+        border-bottom-right-radius: 25px;
+        border-top-right-radius: 25px;
+        margin-left: -6px;
+        background-color: $mainColor;
+        transition: $Main-transition;
+
+        &:hover {
+          background-color: white;
+
+          a {
+            color: $mainColor;
+          }
+        }
+      }
+    }
+
+    header {
+      margin: 20px 40px 30px 40px;
+      color: white;
+      overflow: hidden;
+      h2 {
+        font-size: 30px;
+        line-height: 1.8;
+      }
+
+      p {
+        text-transform: capitalize;
+        font-size: 12px;
+        line-height: 1.5;
+      }
+
+      .hr {
+        width: 500px;
+        margin: 20px 0 0;
+        border-color: rgba($color: #eee, $alpha: 0.5);
+        @media (max-width: 767px) {
+          width: 350px;
+        } 
+        @media (max-width: 435px) {
+          width: 250px;
+        }
+      }
+    }
+    .form {
+      display: flex;
+      align-items: center;
+      flex-flow: column;
+      input {
+        min-width: 300px;
+        padding: 15px;
+        border-radius: 5px;
+        outline: 0;
+        border: 0;
+        margin-bottom: 10px;
+        background-color: #001923;
+        color: rgba($color: white, $alpha: 0.8);
+        font-size: 13px;
+      }
+
+      input:focus {
+        border: 1px solid $premieryColor;
+        color: $premieryColor;
+      }
+
+      input[type="submit"] {
+        background-color: $premieryColor;
+        transition: $Main-transition;
+        min-width: 200px;
+
+        &:hover {
+          background-color: rgba($color: $premieryColor, $alpha: 0.5);
+          color: white;
+        }
+      }
+    }
+    .other {
+      margin: 10px;
+      a {
+        text-decoration: none;
+        color: $premieryColor;
+
+        &:hover {
+          color: rgba($color: $premieryColor, $alpha: 0.5);
+        }
+      }
+
+      hr {
+        border-color: rgba($color: #eee, $alpha: 0.5);
+        margin: 10px;
+      }
+
+      p {
+        margin: 15px;
+        color: white;
+      }
+
+      button {
+        text-align: center;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: #001923;
+        border: 1px solid #0077b6;
+        transition: $Main-transition;
+
+        a {
+          transition: $Main-transition;
+        }
+
+        &:hover {
+          background-color: $premieryColor;
+          box-shadow: 0 0 20px $premieryColor, 0 0 40px $premieryColor,
+            0 0 80px $premieryColor;
+
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes transLeft {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(150%);
+  }
+}
+
+@keyframes transRight {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-150%);
+  }
+}

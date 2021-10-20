@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div class="parent">
+      <div class="container">
+        <section class="shape">
+          <div class="your">
+            <p>YOUR</p>
+          </div>
+          <hr />
+          <div class="need">
+            <p>NEEDs</p>
+          </div>
+        </section>
+        <form action="get">
+          <div class="switch">
+            <button><a href="#">Log in</a></button>
+            <button><a href="#">Register</a></button>
+          </div>
+          <header>
+            <h2>Log up</h2>
+            <p>
+              Now you go to log up <br />
+              please enter your information specific below
+            </p>
+            <hr class="hr" />
+          </header>
+          <div class="form">
+            <div class="col">
+              <input type="text" name="fname" placeholder="First Name" />
+              <input type="text" name="sname" placeholder="Last Name" />
+              <input type="email" name="user" placeholder="E-Mail address" />
+            </div>
+            <div class="col">
+              <input
+                type="password"
+                name="password"
+                class="pass"
+                placeholder="Password"
+              />
+              <input
+                type="password"
+                name="passconf"
+                placeholder="Confirm Password"
+              />
+              <input type="tel" name="tel" placeholder="Phone Number" />
+            </div>
+            <div class="col">
+              <input type="submit" value="Register" />
+            </div>
+          </div>
+        </form>
+        <div class="other">
+          <a href="../logIn/login.html">Already Have An Account ?</a>
+          <p class="or">or</p>
+          <button class="back">
+            <a href="../index.html">Back To Home Page</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
