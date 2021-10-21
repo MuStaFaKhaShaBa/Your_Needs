@@ -89,8 +89,8 @@ input:focus::placeholder {
   height: 350px;
   border-radius: 50%;
   background-color: #03045e;
-  -webkit-transform: translate(-400px, -100px);
-          transform: translate(-400px, -100px);
+  -webkit-transform: translate(-400px, -150px);
+          transform: translate(-400px, -150px);
   position: absolute;
   -webkit-animation: animBgC2 4s linear infinite alternate;
           animation: animBgC2 4s linear infinite alternate;
@@ -112,8 +112,8 @@ input:focus::placeholder {
             transform: translate(250px, 200px);
   }
   .parent::before {
-    -webkit-transform: translate(-300px, -100px);
-            transform: translate(-300px, -100px);
+    -webkit-transform: translate(-300px, -200px);
+            transform: translate(-300px, -200px);
   }
 }
 
@@ -123,8 +123,8 @@ input:focus::placeholder {
             transform: translate(150px, 250px);
   }
   .parent::before {
-    -webkit-transform: translate(-200px, -150px);
-            transform: translate(-200px, -150px);
+    -webkit-transform: translate(-200px, -200px);
+            transform: translate(-200px, -200px);
   }
 }
 
@@ -158,13 +158,23 @@ input:focus::placeholder {
 
 @media (max-width: 767px) {
   .parent .container {
-    max-width: 600px;
+    max-width: 500px;
+    -webkit-transform: translateY(-80px);
+            transform: translateY(-80px);
   }
 }
 
 @media (max-width: 435px) {
   .parent .container {
     width: 350px;
+  }
+}
+
+@media (max-width: 350px) {
+  .parent .container {
+    max-width: 300px;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
 }
 

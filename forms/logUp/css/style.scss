@@ -52,24 +52,32 @@ input:focus::placeholder {
     background-color: $premieryColor;
   }
 
-  @media (max-width: 767px) {
-    height: 140vh;
+  @media (max-width: 450px) {
+    height: 150vh;
     &::after {
-      transform: translate(200px, 200px);
+      transform: translate(150px, 380px);
     }
-
     &::before {
-      transform: translate(-200px, -150px);
+      transform: translate(-250px, -300px);
     }
   }
-  @media (max-width: 435px) {
-    height: 180vh;
+  @media (max-width: 767px) {
     &::after {
-      transform: translate(200px, 250px);
+      transform: translate(250px, 250px);
     }
-
     &::before {
-      transform: translate(-200px, -250px);
+      transform: translate(-250px, -150px);
+    }
+  }
+  @media (max-width: 376px) {
+    &::before {
+      transform: translate(-250px, -400px);
+    }
+  }
+  @media (max-width: 361px) {
+    height: 160vh;
+    &::before {
+      transform: translate(-250px, -320px);
     }
   }
   .container {
@@ -87,14 +95,17 @@ input:focus::placeholder {
 
     @media (max-width: 767px) {
       max-width: 600px;
-      transform: translateY(-30px);
     }
-
-    @media (max-width: 435px) {
+    @media (max-width: 450px) {
+      transform: translatey(-80px);
       width: 350px;
-      transform: translateY(-30px);
     }
-
+    @media (max-width: 376px) {
+      transform: translatey(-180px);
+    }
+    @media (max-width: 361px) {
+      transform: translatey(-70px);
+    }
     .shape {
       transform: translateY(-70px);
       cursor: grab;
@@ -152,10 +163,10 @@ input:focus::placeholder {
         border-bottom-left-radius: 25px;
         border-top-left-radius: 25px;
         background-color: $mainColor;
-       
+        transition: $Main-transition;
         &:hover {
           background-color: white;
-  
+
           a {
             color: $mainColor;
           }
@@ -167,7 +178,7 @@ input:focus::placeholder {
         border-top-right-radius: 25px;
         margin-left: -6px;
         background-color: #fff;
-        transition: $Main-transition;
+
         a {
           color: $mainColor;
         }
@@ -213,6 +224,7 @@ input:focus::placeholder {
       .col {
         display: flex;
         flex-flow: column;
+      
         input {
           margin-bottom: 20px;
           min-width: 200px;
@@ -224,10 +236,17 @@ input:focus::placeholder {
           background-color: #001923;
           color: rgba($color: white, $alpha: 0.8);
           font-size: 13px;
+    
         }
         input:focus {
           border: 1px solid $premieryColor;
           color: $premieryColor;
+        }
+        @media (max-width: 280px) {
+          align-items: center;
+          input{
+            text-align: center;
+          }
         }
       }
       .col:last-child {
@@ -236,7 +255,9 @@ input:focus::placeholder {
           background-color: $premieryColor;
           transition: $Main-transition;
           min-width: 200px;
-
+          @media (max-width: 281px) {
+            transform: translatex(25%);
+          }
           &:hover {
             background-color: rgba($color: $premieryColor, $alpha: 0.5);
             color: white;
