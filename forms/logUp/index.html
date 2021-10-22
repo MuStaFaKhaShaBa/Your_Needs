@@ -35,26 +35,46 @@
           </header>
           <div class="form">
             <div class="col">
-              <input type="text" name="fname" placeholder="First Name" />
-              <input type="text" name="sname" placeholder="Last Name" />
-              <input type="email" name="user" placeholder="E-Mail address" />
+              <div class="inputbox">
+                <label for="fname">First Name :</label>
+                <input id="fname" required type="text" name="fname" />
+              </div>
+
+              <div class="inputbox">
+                <label for="lname">Last Name :</label>
+                <input id="lName" required type="text" name="lname" />
+              </div>
+
+              <div class="inputbox">
+                <label for="fname">E-mail :</label>
+                <input id="email" required type="email" name="email" />
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="inputbox">
+                <label for="password">Create Password :</label>
+                <input
+                  id="password"
+                  required
+                  type="password"
+                  name="password"
+                  class="pass"
+                />
+              </div>
+
+              <div class="inputbox">
+                <label for="passconf">Confirm Password :</label>
+                <input id="passconf" required type="password" name="passconf" />
+              </div>
+
+              <div class="inputbox">
+                <label for="tel">Phone Number :</label>
+                <input id="tel" required type="tel" name="tel" />
+              </div>
             </div>
             <div class="col">
-              <input
-                type="password"
-                name="password"
-                class="pass"
-                placeholder="Password"
-              />
-              <input
-                type="password"
-                name="passconf"
-                placeholder="Confirm Password"
-              />
-              <input type="tel" name="tel" placeholder="Phone Number" />
-            </div>
-            <div class="col">
-              <input type="submit" value="Register" />
+              <input required type="submit" value="Register" />
             </div>
           </div>
         </form>
