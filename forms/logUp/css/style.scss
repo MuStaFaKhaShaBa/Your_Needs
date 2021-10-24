@@ -259,7 +259,7 @@ $Padding: 60px;
           }
         }
       }
-      .inputbox:last-child{
+      .inputbox:last-child {
         margin: 0;
       }
       .col:last-child {
@@ -335,14 +335,22 @@ $Padding: 60px;
   }
 }
 @keyframes animBgC1 {
+  0% {
+    box-shadow: 0 0 40px $premieryColor, 0 0 80px $premieryColor;
+  }
   100% {
     background-color: $mainColor;
+    box-shadow: 0 0 40px $mainColor, 0 0 80px $mainColor;
   }
 }
 
 @keyframes animBgC2 {
+  0% {
+    box-shadow: 0 0 40px $mainColor, 0 0 80px $mainColor;
+  }
   100% {
     background-color: $premieryColor;
+    box-shadow: 0 0 40px $premieryColor, 0 0 80px $premieryColor;
   }
 }
 

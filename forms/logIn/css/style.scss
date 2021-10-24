@@ -14,14 +14,22 @@ $Padding: 60px;
   box-sizing: border-box;
 }
 @keyframes animBgC1 {
+  0% {
+    box-shadow: 0 0 40px $premieryColor, 0 0 80px $premieryColor;
+  }
   100% {
     background-color: $mainColor;
+    box-shadow: 0 0 40px $mainColor, 0 0 80px $mainColor;
   }
 }
 
 @keyframes animBgC2 {
+  0% {
+    box-shadow: 0 0 40px $mainColor, 0 0 80px $mainColor;
+  }
   100% {
     background-color: $premieryColor;
+    box-shadow: 0 0 40px $premieryColor, 0 0 80px $premieryColor;
   }
 }
 
@@ -99,6 +107,7 @@ $Padding: 60px;
     backdrop-filter: blur(25px);
     text-align: center;
     padding: 20px;
+    border-radius: 5px;
     @media (min-width: 1099px) {
       margin-top: -20px;
     }
@@ -286,6 +295,8 @@ $Padding: 60px;
         outline: 0;
         border: 0;
         cursor: pointer;
+        color: white;
+        font-weight: 600;
         &:hover {
           background-color: rgba($color: $premieryColor, $alpha: 0.5);
           color: white;

@@ -419,26 +419,50 @@
 }
 
 @-webkit-keyframes animBgC1 {
+  0% {
+    -webkit-box-shadow: 0 0 40px #0077b6, 0 0 80px #0077b6;
+            box-shadow: 0 0 40px #0077b6, 0 0 80px #0077b6;
+  }
   100% {
     background-color: #03045e;
+    -webkit-box-shadow: 0 0 40px #03045e, 0 0 80px #03045e;
+            box-shadow: 0 0 40px #03045e, 0 0 80px #03045e;
   }
 }
 
 @keyframes animBgC1 {
+  0% {
+    -webkit-box-shadow: 0 0 40px #0077b6, 0 0 80px #0077b6;
+            box-shadow: 0 0 40px #0077b6, 0 0 80px #0077b6;
+  }
   100% {
     background-color: #03045e;
+    -webkit-box-shadow: 0 0 40px #03045e, 0 0 80px #03045e;
+            box-shadow: 0 0 40px #03045e, 0 0 80px #03045e;
   }
 }
 
 @-webkit-keyframes animBgC2 {
+  0% {
+    -webkit-box-shadow: 0 0 40px #03045e, 0 0 80px #03045e;
+            box-shadow: 0 0 40px #03045e, 0 0 80px #03045e;
+  }
   100% {
     background-color: #0077b6;
+    -webkit-box-shadow: 0 0 40px #0077b6, 0 0 80px #0077b6;
+            box-shadow: 0 0 40px #0077b6, 0 0 80px #0077b6;
   }
 }
 
 @keyframes animBgC2 {
+  0% {
+    -webkit-box-shadow: 0 0 40px #03045e, 0 0 80px #03045e;
+            box-shadow: 0 0 40px #03045e, 0 0 80px #03045e;
+  }
   100% {
     background-color: #0077b6;
+    -webkit-box-shadow: 0 0 40px #0077b6, 0 0 80px #0077b6;
+            box-shadow: 0 0 40px #0077b6, 0 0 80px #0077b6;
   }
 }
 
