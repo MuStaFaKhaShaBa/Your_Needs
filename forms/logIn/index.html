@@ -1,54 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../css/all.min.css" />
+    <link rel="stylesheet" href="../css/normalize.css" />
+    <title>YOUR NEEDs | LOG IN</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="../css/all.min.css" />
-  <link rel="stylesheet" href="../css/normalize.css" />
-  <title>YOUR NEEDs | LOG IN</title>
-</head>
+  <body>
+    <section class="parent">
+      <div class="container">
+        <section class="shape">
+          <div class="your">
+            <p>YOUR</p>
+          </div>
+          <hr />
+          <div class="need">
+            <p>NEEDs</p>
+          </div>
+        </section>
+        <form action="get">
+          <div class="switch">
+            <button><a href="index.html">Log in</a></button>
+            <button><a href="../logUp/index.html">Register</a></button>
+          </div>
+          <header>
+            <h2>Log in</h2>
+            <p>
+              Now you go to log in <br />
+              please enter your user and password
+            </p>
+            <hr class="hr" />
+          </header>
+          <div class="form">
 
-<body>
-  <section class="parent">
-    <div class="container">
-      <section class="shape">
-        <div class="your">
-          <p>YOUR</p>
-        </div>
-        <hr />
-        <div class="need">
-          <p>NEEDs</p>
-        </div>
-      </section>
-      <form action="get">
-        <div class="switch">
-          <button><a href="index.html">Log in</a></button>
-          <button><a href="../logUp/index.html">Register</a></button>
-        </div>
-        <header>
-          <h2>Log in</h2>
-          <p>
-            Now you go to log in <br />
-            please enter your user and password
-          </p>
-          <hr class="hr" />
-        </header>
-        <div class="form">
-          <input type="email" name="user" class="User" placeholder="E-Mail address or Phone number" />
-          <input type="password" name="password" class="pass" placeholder="Password" />
-          <input type="submit" value="Log in" />
-        </div>
-        <div class="other">
-          <a href="#">Forgotten Password ? </a>
-          <p class="or">or</p>
-          <button class="back"><a href="../../index.html">Back To Home Page</a></button>
-        </div>
-      </form>
-    </div>
-  </section>
-</body>
+            <input type="email" name="user" class="user" required placeholder="Username , E-mail or Phone number" />
+            <label>Username , E-mail or Phone number</label>
 
+            <input type="password" name="password" class="pass"required placeholder="Password" />
+            <label class="dsd">Password</label>
+
+            <input type="submit" value="Log in" />
+          </div>
+
+          <div class="other">
+            <a href="#">Forgotten Password ? </a>
+            <p class="or">or</p>
+            <button class="back">
+              <a href="../../index.html">Back To Home Page</a>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </body>
 </html>

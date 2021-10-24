@@ -5,42 +5,6 @@
           box-sizing: border-box;
 }
 
-::-webkit-input-placeholder {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 13px;
-}
-
-:-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 13px;
-}
-
-::-ms-input-placeholder {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 13px;
-}
-
-::placeholder {
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 13px;
-}
-
-input:focus::-webkit-input-placeholder {
-  color: #0077b6;
-}
-
-input:focus:-ms-input-placeholder {
-  color: #0077b6;
-}
-
-input:focus::-ms-input-placeholder {
-  color: #0077b6;
-}
-
-input:focus::placeholder {
-  color: #0077b6;
-}
-
 @-webkit-keyframes animBgC1 {
   100% {
     background-color: #03045e;
@@ -62,6 +26,52 @@ input:focus::placeholder {
 @keyframes animBgC2 {
   100% {
     background-color: #0077b6;
+  }
+}
+
+@media (max-width: 1098px) {
+  ::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+  }
+  :-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+  }
+  ::-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+  }
+  ::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+  }
+  input:focus::-webkit-input-placeholder {
+    color: #0077b6;
+  }
+  input:focus:-ms-input-placeholder {
+    color: #0077b6;
+  }
+  input:focus::-ms-input-placeholder {
+    color: #0077b6;
+  }
+  input:focus::placeholder {
+    color: #0077b6;
+  }
+}
+
+@media (min-width: 1100px) {
+  ::-webkit-input-placeholder {
+    visibility: hidden;
+  }
+  :-ms-input-placeholder {
+    visibility: hidden;
+  }
+  ::-ms-input-placeholder {
+    visibility: hidden;
+  }
+  ::placeholder {
+    visibility: hidden;
   }
 }
 
@@ -315,23 +325,66 @@ input:focus::placeholder {
   -webkit-box-direction: normal;
       -ms-flex-flow: column;
           flex-flow: column;
+  position: relative;
 }
 
-.parent .container .form input {
+.parent .container .form input:not(input[type="submit"]) {
   min-width: 300px;
-  padding: 15px;
+  padding: 20px;
   border-radius: 5px;
-  outline: 0;
   border: 0;
+  outline: 0;
   margin-bottom: 10px;
   background-color: #001923;
-  color: rgba(255, 255, 255, 0.8);
+  color: #0077b6;
   font-size: 13px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
-.parent .container .form input:focus {
+@media (min-width: 1098px) {
+  .parent .container .form .user + label,
+  .parent .container .form .pass + label {
+    position: absolute;
+    top: 10px;
+    left: 155px;
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
+  }
+  .parent .container .form .pass + label {
+    top: 75px;
+  }
+  .parent .container .form input:not(input[type="submit"]) {
+    padding: 30px 20px 10px;
+  }
+}
+
+@media (max-width: 1099px) {
+  .parent .container .form .user + label,
+  .parent .container .form .pass + label {
+    display: none;
+  }
+}
+
+.parent .container .form input[type="email"]:valid {
+  background-color: #001923;
+}
+
+.parent .container .form input:not(input[type="submit"]):focus {
   border: 1px solid #0077b6;
+}
+
+.parent .container .form input:not(input[type="submit"]):focus + label {
   color: #0077b6;
+}
+
+.parent .container .form input:not(input[type="submit"]):focus + label::after {
+  content: ",";
+  position: absolute;
+  right: -5px;
+  font-size: 15px;
 }
 
 .parent .container .form input[type="submit"] {
@@ -339,6 +392,11 @@ input:focus::placeholder {
   -webkit-transition: 0.3s;
   transition: 0.3s;
   min-width: 200px;
+  padding: 15px;
+  border-radius: 5px;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
 }
 
 .parent .container .form input[type="submit"]:hover {
